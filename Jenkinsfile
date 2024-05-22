@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image with a tag using the build number
-                    sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NAME} ."
+                    sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NAME}."
                 }
             }
         }
