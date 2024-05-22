@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     // Push the Docker image to the repository
-                    sh "docker push ${DOCKER_IMAGE}:${BUILD_NAME}"
+                    docker.image(env.DOCKER_IMAGE).push('latest')
                 }
             }
         }
