@@ -7,13 +7,13 @@ pipeline {
         BUILD_NAME = "${env.BUILD_NUMBER}"
         KUBE_NAMESPACE = 'default'
     }
-
+	
     stages {
         stage('Build') {
             steps {
                 script {
                     // Build the Docker image with a tag using the build number
-                    sh "docker build -t ${DOCKER_IMAGE}:${BUILD_NAME}"
+                    docker.build(env.DOCKER_IMAGE, '-f /home/student/jenkins-deploy/Dockerfile .')
                 }
             }
         }
