@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'bolbi85/hello-world-dogukan'
+        DOCKER_IMAGE = 'bolbi85/hello-world-dogukan:latest'
 	DOCKER_CREDENTIALS_ID = 'docker-registry'
         DOCKER_REGISTRY = 'https://index.docker.io/v1/'  // Change if using a different registry
         BUILD_NAME = "${env.BUILD_NUMBER}"
