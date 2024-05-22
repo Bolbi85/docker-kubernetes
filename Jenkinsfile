@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-	label 'agentkub'    
-    }
+    agent any
     environment {
         DOCKER_IMAGE = 'bolbi85/hello-world-dogukan'
 	DOCKER_CREDENTIALS_ID = 'docker-registry'
