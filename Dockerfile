@@ -1,5 +1,11 @@
-# Gebruik de officiële Apache image als basis
-FROM httpd:2.4
+# Gebruik de officiële nginx image als basis
+FROM nginx:latest
 
-# Exposeer poort 80 om toegang te krijgen tot de Apache-server
-EXPOSE 80
+# Verwijder de standaard index.html van nginx
+RUN mkdir -p /home/web
+
+# Kopieer uw eigen index.html naar de juiste locatie
+COPY . /index.html
+
+# Start nginx in de voorgrond
+CMD ["nginx", "-g", "daemon off;"]
