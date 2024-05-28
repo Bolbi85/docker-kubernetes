@@ -9,13 +9,14 @@ pipeline {
         GIT_REPO_URL = 'https://github.com/Bolbi85/docker-kubernetes.git'  // Vervang door je eigen GitHub repo URL
         GIT_BRANCH = 'main'  // De branch die je wilt gebruiken
     }
-    
-    stage('Checkout') {
-            steps {
-                // Haal de code en Dockerfile op uit de GitHub-repository
-                git branch: "${GIT_BRANCH}", url: "${GIT_REPO_URL}"
+
+    stages {
+        stage('Checkout') {
+                steps {
+                    // Haal de code en Dockerfile op uit de GitHub-repository
+                    git branch: "${GIT_BRANCH}", url: "${GIT_REPO_URL}"
+                }
             }
-        }
 
         stage('Build') {
             steps {
