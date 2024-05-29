@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image with a tag using the build number
-                    docker.build("${DOCKER_IMAGE}:${BUILD_NAME}", '-f Dockerfile .')
+                    docker.build("${DOCKER_IMAGE}:${BUILD_NAME}", '-f /home/student/jenkins-deploy/Dockerfile .')
                 }
             }
         }
